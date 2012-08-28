@@ -18,7 +18,7 @@
   </div>
 <% end %>
 
-<%= render_partial 'shared/command_list' %>
+<%= render :partial => 'shared/command_list' %>
 
 <% if ! @searching and params['all'] != 'true' %>
   <div class="hint" style="margin-top: 10px">

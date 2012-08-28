@@ -15,7 +15,7 @@ class ParserController < ApplicationController
       return
     end
     if params[:show_user_agent] then
-      render_text request.user_agent
+      render :text => request.user_agent
       return
     end
     # According to the access log, Yahoo Pipes seems to be bringing the site down. [Jon Aquino 2009-07-03]
@@ -25,16 +25,16 @@ class ParserController < ApplicationController
     end
     # Cache the url, for testing [Jon Aquino 2005-06-19]
     @last_url = parse_with_substitutions(params[:command], params[:default])
-    redirect_to_url @last_url
+    redirect_to @last_url
   end
   def url
-    render_text parse_with_substitutions(params[:command], nil)
+    render :text => parse_with_substitutions(params[:command], nil)
   end
   def index
     @page_title = "YubNub"
   end
   def uptime
-    Command.find_first()
-    render_text "success"
+    Command.find(:first)
+    render :text => "success"
   end
 end

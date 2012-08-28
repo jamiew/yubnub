@@ -18,10 +18,10 @@ class KernelController < ApplicationController
     end
     @command_name = params['args']
     @page_title = @command_name
-    @command = Command.find_first ['name=?', @command_name]
+    @command = Command.find(:first, :conditions => ['name=?', @command_name])
     if @command == nil then 
       @page_title = "man #{@command_name}"
-      render_action :no_manual_entry 
+      render :action => :no_manual_entry 
       return
     end
   end

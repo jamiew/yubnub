@@ -6,7 +6,7 @@ class CommandController < ApplicationController
   #model :command
   layout 'standard'
   def exists
-    output = Command.find_first(['name = ?', params['name']]) ? 'true' : 'false'
+    output = Command.find(:first, :conditions => ['name = ?', params['name']]) ? 'true' : 'false'
     json = '({exists: ' + output + '})'
     response.headers['X-JSON'] = json
     render({:content_type => :js, :text => json})
@@ -31,13 +31,13 @@ class CommandController < ApplicationController
       view_url url, params['test_command']
       return
     end
-    if @request.method() != :post then
+    if request.method != :post then
       # If the method is get, the request is probably from a spam # bot. Redirect as normal,
       # but do not add the command. [Jon Aquino 2005-06-10]
       redirect_after_add_command
       return
     end
-    if BannedUrlPattern.find_first(["? LIKE pattern", url]) then
+    if BannedUrlPattern.find(:first, :conditions => ["? LIKE pattern", url]) then
       # spam [Jon Aquino 2005-06-10]
       redirect_after_add_command
       return
@@ -48,7 +48,7 @@ class CommandController < ApplicationController
     end
     # Only ban a url if it hasn't been entered earlier than an hour # ago. Otherwise clever spammers
     # will ban good url's that have been around for a long time. [Jon # Aquino 2005-06-11]
-    matching_commands = Command.find_all(['url = ?', url], 'creation_date')
+    matching_commands = Command.find(:all, :conditions => ['url = ?', url])
     if matching_commands.size >= 3 and Time.now-matching_commands[0].creation_date<60*60
       # spam [Jon Aquino 2005-06-10]
       matching_commands.each { |command| command.destroy }

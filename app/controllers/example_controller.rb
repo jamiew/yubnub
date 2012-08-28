@@ -18,18 +18,18 @@ class ExampleController < ApplicationController
     redirect_to "http://www.archive.org/download/dn#{yyyy_mmdd}/dn#{yyyy_mmdd}_vbr.m3u"
   end
   def echo
-    render_text params['text']
+    render :text => params['text']
   end
   def today
-    render_text (Time.now + (60 * 60 * 24 * params['offset'].to_f)).
+    render :text => (Time.now + (60 * 60 * 24 * params['offset'].to_f)).
           strftime(params['format'].gsub(/([aAbBcdHIjmMpSUWwxXyYZ])/, '%\1'))
   end
   def ucase
     # ucase and lcase requested by Allen Ormond [Jon Aquino 2005-08-07]
-    render_text params['text'] ? params['text'].upcase : ''
+    render :text => params['text'] ? params['text'].upcase : ''
   end
   def lcase
-    render_text params['text'] ? params['text'].downcase : ''
+    render :text => params['text'] ? params['text'].downcase : ''
   end
   def split
     type = params['type']
@@ -49,7 +49,7 @@ class ExampleController < ApplicationController
     phonetics.split.each { |phonetic|
       letter_to_phonetic_map[phonetic[0..0]] = phonetic
     }
-    render_text params['text'].upcase.scan(/./).collect { |char|
+    render :text => params['text'].upcase.scan(/./).collect { |char|
       letter_to_phonetic_map.has_key?(char) ? letter_to_phonetic_map[char] : char
     }.join(' ')
   end

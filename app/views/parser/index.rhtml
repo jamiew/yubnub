@@ -1,8 +1,8 @@
-<%= render_partial 'shared/header' %>
+<%= render :partial => 'shared/header' %>
 <center>
 <%= image_tag("yubnub.png") %>
 <div style="margin-top:30px;margin-bottom:30px">
-  <%= render_partial 'shared/input_box', nil, 'size' => 55 %>
+  <%= render :partial => 'shared/input_box', :locals => { 'size' => 55 } %>
 </div>
 <table>
   <tr><td>Some examples of what you can do with YubNub:</td></tr>
@@ -63,4 +63,4 @@
   <tr><td><center><a class="hint" href="/parser/parse?command=ge">Yet more commands...</a></center></td></tr>  
 </table>
 </center>
-<%= render_partial 'shared/footer', nil, 'display_rails_day_notice' => false %>
+<%= render :partial => 'shared/footer', :locals => { 'display_rails_day_notice' => false } %>
