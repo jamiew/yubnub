@@ -282,7 +282,7 @@
   
     class WeblogController < ActionController::Base
       def index
-        @posts = Post.find_all
+        @posts = Post.all
         breakpoint "Breaking out from the list"
       end
     end
@@ -370,7 +370,7 @@
 
 * Added new_crud generator for creating a model and controller at the same time with explicit scaffolding [bitsweat]
 
-* Added configuration of Test::Unit::TestCase.fixture_path to test_helper to concide with the new AR fixtures style
+* Added configuration of ActiveSupport::TestCase.fixture_path to test_helper to concide with the new AR fixtures style
 
 * Fixed that new_model was generating singular table/fixture names
 
@@ -440,7 +440,7 @@
 
 * Upgraded to Action Pack 0.8.5 (locally-scoped variables, partials, advanced send_file)
 
-* Upgraded to Active Record 0.9.5 (better table_name guessing, cloning, find_all_in_collection)
+* Upgraded to Active Record 0.9.5 (better table_name guessing, cloning, all_in_collection)
 
 
 *0.6.5*
@@ -476,7 +476,7 @@
   
     require 'config/environments/production'
     
-    for account in Account.find_all
+    for account in Account.all
       account.recalculate_interests
     end
   

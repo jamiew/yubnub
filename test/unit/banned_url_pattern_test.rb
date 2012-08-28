@@ -1,6 +1,6 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
-class BannedUrlPatternTest < Test::Unit::TestCase
+class BannedUrlPatternTest < ActiveSupport::TestCase
   fixtures :banned_url_patterns
 
   def setup

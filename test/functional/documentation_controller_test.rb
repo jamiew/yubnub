@@ -4,7 +4,7 @@ require 'documentation_controller'
 # Re-raise errors caught by the controller.
 class DocumentationController; def rescue_action(e) raise e end; end
 
-class DocumentationControllerTest < Test::Unit::TestCase
+class DocumentationControllerTest < ActionController::TestCase
   def setup
     @controller = DocumentationController.new
     @request    = ActionController::TestRequest.new

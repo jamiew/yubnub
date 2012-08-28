@@ -1,10 +1,10 @@
 require File.dirname(__FILE__) + '/../test_helper'
 
-class CommandTest < Test::Unit::TestCase
+class CommandTest < ActiveSupport::TestCase
   fixtures :commands
 
   def setup
-    @gim = Command.find_first "name='gim'"  
+    @gim = Command.find :first, :conditions => "name='gim'"  
   end
 
   def test_truth

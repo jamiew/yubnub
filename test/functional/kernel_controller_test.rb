@@ -5,7 +5,7 @@ require 'kernel_controller'
 # Re-raise errors caught by the controller.
 class KernelController; def rescue_action(e) raise e end; end
 
-class KernelControllerTest < Test::Unit::TestCase
+class KernelControllerTest < ActionController::TestCase
   include ApplicationHelper
   fixtures :commands
   def setup

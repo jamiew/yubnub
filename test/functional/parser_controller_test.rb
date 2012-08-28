@@ -4,7 +4,7 @@ require 'parser_controller'
 # Re-raise errors caught by the controller.
 class ParserController; def rescue_action(e) raise e end; end
 
-class ParserControllerTest < Test::Unit::TestCase
+class ParserControllerTest < ActionController::TestCase
   include ParserHelper
   fixtures :commands
 
@@ -17,11 +17,11 @@ class ParserControllerTest < Test::Unit::TestCase
     assert_generates "", {:controller => 'parser', :action => 'index'}
   end
   def test_uses
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     assert_equal 0, command.uses
     assert_nil command.last_use_date
     get :parse, {'command' => 'gim "porsche 911"'}
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     assert_equal 1, command.uses
     assert_not_nil command.last_use_date
     assert Time.now - command.last_use_date < 2  # seconds
@@ -44,7 +44,7 @@ class ParserControllerTest < Test::Unit::TestCase
     assert_response :redirect
   end
   def test_multiple_parameters
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://craigslist.com?city=${city}&item=${item}'
     command.save
     get :parse, {'command' => 'gim  -city  san  francisco  -item  tennis  shoes'}
@@ -67,7 +67,7 @@ class ParserControllerTest < Test::Unit::TestCase
     assert_response :redirect
   end
   def test_multiple_parameters_with_defaults
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://craigslist.com?city=${city}&item=${item=foo bar}'
     command.save
     get :parse, {'command' => 'gim  -city  san  francisco  -item  tennis  shoes'}
@@ -90,7 +90,7 @@ class ParserControllerTest < Test::Unit::TestCase
     assert_response :redirect
   end
   def test_COMMAND_parameter
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://craigslist.com?city=${city}&foo=${COMMAND}'
     command.save
     get :parse, {'command' => 'gim -city san francisco'}
@@ -98,7 +98,7 @@ class ParserControllerTest < Test::Unit::TestCase
     assert_response :redirect
   end
   def test_multiple_parameters_with_defaults_2
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://craigslist.com?city=${city=victoria bc=blah}&item=${item=foo bar}'
     command.save
     get :parse, {'command' => 'gim  -city  san  francisco  -item  tennis  shoes'}
@@ -121,7 +121,7 @@ class ParserControllerTest < Test::Unit::TestCase
     assert_response :redirect
   end
   def test_multiple_parameters_2
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://craigslist.com?city=${city}&item=%s'
     command.save
     get :parse, {'command' => 'gim  -city  san  francisco  tennis  shoes'}
@@ -144,7 +144,7 @@ class ParserControllerTest < Test::Unit::TestCase
     assert_response :redirect
   end
   def test_multiple_parameters_3
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://craigslist.com?city=${city}&item=${city}'
     command.save
     get :parse, {'command' => 'gim  -city  san  francisco'}
@@ -168,31 +168,31 @@ class ParserControllerTest < Test::Unit::TestCase
     }
   end
   def test_compile_time_substitutions
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://{test_echo foo{test_echo bar}}.com'
     command.save
     get :parse, {'command' => 'gim'}
     assert_equal 'http://foobar.com', @controller.last_url
     assert_response :redirect
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://foo.com?first=${first}&{test_echo l{test_echo as}}{test_echo t}=${last}'
     command.save
     get :parse, {'command' => 'gim -first jon -last aquino'}
     assert_equal 'http://foo.com?first=jon&last=aquino', @controller.last_url
     assert_response :redirect
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://foo.com?first=${first}&last=${last={test_echo foo bar}}'
     command.save
     get :parse, {'command' => 'gim -first jon'}
     assert_equal 'http://foo.com?first=jon&last=foo+bar', @controller.last_url
     assert_response :redirect
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://foo.com?first=${first}&last={test_echo X${last}Z}'
     command.save
     get :parse, {'command' => 'gim -first jon -last aquino'}
     assert_equal 'http://foo.com?first=jon&last=XaquinoZ', @controller.last_url
     assert_response :redirect
-    command = Command.find_first("name='gim'")
+    command = Command.find(:first, :conditions => "name='gim'")
     command.url = 'http://foo.com?first=${first}&last={test_echo X${last={test_echo smith jones}}Z}'
     command.save
     get :parse, {'command' => 'gim -first jon -last aquino'}
