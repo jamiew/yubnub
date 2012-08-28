@@ -56,7 +56,7 @@
       };
   }
 </script>
-<%= start_form_tag({:action => 'add_command'}, {:name => 'add_command_form' }) %>
+<form action="/command/add_command" method="post" name="add_command_form">
 <table>
 <% if @name == "" then %>
 <tr>
@@ -135,5 +135,5 @@ Example: gmaps pizza in Detroit<br/>
   commandNameChanged();
 </script>
 <input type="text" name="x" id="x" size="1"/>
-<%= end_form_tag %>
+</form>
 

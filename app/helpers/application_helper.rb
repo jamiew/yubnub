@@ -1,3 +1,4 @@
+# Methods added to this helper will be available to all templates in the application.
 # The methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   def empty_string_if_nil(x)

@@ -10,11 +10,11 @@
 </table>
 <div style="border-top: 1px dotted #B8B8B8;">
 <h1><%= @page_title %></h1>
-<% if @flash[:message] then %>
-  <div class="message" style="margin-bottom:15px"><%= @flash[:message] %></div>
+<% if flash[:message] then %>
+  <div class="message" style="margin-bottom:15px"><%= flash[:message] %></div>
 <% end %>
-<% if @flash[:warning] then %>
-  <div class="warning" style="margin-bottom:15px"><%= @flash[:warning] %></div>
+<% if flash[:warning] then %>
+  <div class="warning" style="margin-bottom:15px"><%= flash[:warning] %></div>
 <% end %>
 <%= @content_for_layout %>
 </div>

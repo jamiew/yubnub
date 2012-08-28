@@ -1,0 +1,162 @@
+# Logfile created on Tue Aug 28 21:55:22 +0200 2012 by logger.rb/22283
+
+
+Processing ParserController#index (for 127.0.0.1 at 2012-08-28 21:55:28) [GET]
+  Session ID: cfccdb4c240a3e953765434940eaccc2
+  Parameters: {"action"=>"index", "controller"=>"parser"}
+Rendering parser/index
+Rendered shared/_header (0.00115)
+Rendered shared/_input_box (0.00055)
+Rendered shared/_footer (0.00534)
+Completed in 0.01835 (54 reqs/sec) | Rendering: 0.01750 (95%) | 200 OK [http://localhost/]
+
+
+Processing ParserController#parse (for 127.0.0.1 at 2012-08-28 21:55:31) [GET]
+  Session ID: cfccdb4c240a3e953765434940eaccc2
+  Parameters: {"command"=>"ls", "action"=>"parse", "controller"=>"parser"}
+  [4;36;1mSQL (0.000174)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCommand Load (0.000852)[0m   [0mSELECT * FROM commands WHERE (name='ls') LIMIT 1[0m
+  [4;36;1mCommand Columns (0.003859)[0m   [0;1mSHOW FIELDS FROM commands[0m
+  [4;35;1mSQL (0.000217)[0m   [0mBEGIN[0m
+  [4;36;1mCommand Update (0.000392)[0m   [0;1mUPDATE commands SET `creation_date` = '2005-06-04 12:42:27', `spam` = 0, `last_use_date` = '2012-08-28 21:55:31', `golden_egg_date` = '2005-06-04 12:42:27', `description` = 'SYNOPSIS\r\n ls [word or phrase]\r\n\r\nEXAMPLES\r\n ls\r\n ls music\r\n\r\nDESCRIPTION\r\n Lists information about all the commands in YubNub. Sorts entries\r\n by date.\r\n\r\n If you specify a word or phrase, YubNub will search the \r\n descriptions, names, and urls for that word or phrase.\r\n For example, \"ls music\" will return all YubNub commands pertaining \r\n to music.', `uses` = 489711, `url` = 'http://localhost:3000/kernel/ls?args=%s', `name` = 'ls' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.000126)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/kernel/ls?args=
+Completed in 0.03670 (27 reqs/sec) | DB: 0.00562 (15%) | 302 Found [http://localhost/parser/parse?command=ls]
+
+
+Processing KernelController#ls (for 127.0.0.1 at 2012-08-28 21:55:31) [GET]
+  Session ID: cfccdb4c240a3e953765434940eaccc2
+  Parameters: {"args"=>nil, "action"=>"ls", "controller"=>"kernel"}
+
+
+NameError (uninitialized constant ActiveSupport::Inflector):
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:266:in `load_missing_constant'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:452:in `const_missing'
+    /Users/ktamas/Prog/yubnub/vendor/plugins/classic_pagination/lib/pagination.rb:100:in `validate_options!'
+    /Users/ktamas/Prog/yubnub/vendor/plugins/classic_pagination/lib/pagination.rb:132:in `paginate'
+    /Users/ktamas/Prog/yubnub/app/controllers/kernel_controller.rb:12:in `initialize_pagination'
+    /Users/ktamas/Prog/yubnub/app/controllers/kernel_controller.rb:9:in `ls'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/base.rb:1101:in `send'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/base.rb:1101:in `perform_action_without_filters'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/filters.rb:696:in `call_filters'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/filters.rb:688:in `perform_action_without_benchmark'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Users/ktamas/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/rescue.rb:83:in `perform_action'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/base.rb:435:in `send'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/base.rb:435:in `process_without_filters'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/filters.rb:684:in `process_without_session_management_support'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/session_management.rb:114:in `process'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/base.rb:334:in `process'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/rails-1.2.6/lib/dispatcher.rb:41:in `dispatch'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:488:in `load'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/rails-1.2.6/lib/commands/servers/mongrel.rb:60
+    /Users/ktamas/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/ktamas/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:342:in `new_constants_in'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-1.4.4/lib/active_support/dependencies.rb:495:in `require'
+    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/rails-1.2.6/lib/commands/server.rb:39
+    /Users/ktamas/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Users/ktamas/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+
+Rendering /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-1.13.6/lib/action_controller/templates/rescues/layout.rhtml (500 Internal Error)
+
+
+Processing ParserController#index (for 127.0.0.1 at 2012-08-28 21:57:26) [GET]
+  Session ID: cfccdb4c240a3e953765434940eaccc2
+  Parameters: {"action"=>"index", "controller"=>"parser"}
+Rendering parser/index
+Rendered shared/_header (0.00125)
+Rendered shared/_input_box (0.00057)
+Rendered shared/_footer (0.00632)
+Completed in 0.01287 (77 reqs/sec) | Rendering: 0.01201 (93%) | 200 OK [http://localhost/]
+
+
+Processing ParserController#parse (for 127.0.0.1 at 2012-08-28 21:57:28) [GET]
+  Session ID: cfccdb4c240a3e953765434940eaccc2
+  Parameters: {"command"=>"ls", "action"=>"parse", "controller"=>"parser"}
+  [4;36;1mSQL (0.000180)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mCommand Load (0.000846)[0m   [0mSELECT * FROM commands WHERE (name='ls') LIMIT 1[0m
+  [4;36;1mCommand Columns (0.004023)[0m   [0;1mSHOW FIELDS FROM commands[0m
+  [4;35;1mSQL (0.000177)[0m   [0mBEGIN[0m
+  [4;36;1mCommand Update (0.000463)[0m   [0;1mUPDATE commands SET `creation_date` = '2005-06-04 12:42:27', `spam` = 0, `last_use_date` = '2012-08-28 21:57:28', `golden_egg_date` = '2005-06-04 12:42:27', `description` = 'SYNOPSIS\r\n ls [word or phrase]\r\n\r\nEXAMPLES\r\n ls\r\n ls music\r\n\r\nDESCRIPTION\r\n Lists information about all the commands in YubNub. Sorts entries\r\n by date.\r\n\r\n If you specify a word or phrase, YubNub will search the \r\n descriptions, names, and urls for that word or phrase.\r\n For example, \"ls music\" will return all YubNub commands pertaining \r\n to music.', `uses` = 489712, `url` = 'http://localhost:3000/kernel/ls?args=%s', `name` = 'ls' WHERE `id` = 2[0m
+  [4;35;1mSQL (0.000127)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/kernel/ls?args=
+Completed in 0.04042 (24 reqs/sec) | DB: 0.00582 (14%) | 302 Found [http://localhost/parser/parse?command=ls]
+
+
+Processing KernelController#ls (for 127.0.0.1 at 2012-08-28 21:57:28) [GET]
+  Session ID: cfccdb4c240a3e953765434940eaccc2
+  Parameters: {"args"=>nil, "action"=>"ls", "controller"=>"kernel"}
+  [4;36;1mCommand Columns (0.003504)[0m   [0;1mSHOW FIELDS FROM commands[0m
+  [4;35;1mSQL (0.000460)[0m   [0mSELECT count(*) AS count_all FROM commands [0m
+  [4;36;1mCommand Load (0.024747)[0m   [0;1mSELECT * FROM commands ORDER BY creation_date DESC LIMIT 0, 50[0m
+Rendering  within layouts/standard
+Rendering kernel/ls
+Rendered shared/_command_list (0.04081)
+Rendered shared/_header (0.00023)
+Rendered shared/_input_box (0.00008)
+Rendered shared/_footer (0.00256)
+Completed in 0.08298 (12 reqs/sec) | Rendering: 0.04724 (56%) | DB: 0.02871 (34%) | 200 OK [http://localhost/kernel/ls?args=]
+
+
+Processing KernelController#ls (for 127.0.0.1 at 2012-08-28 21:57:34) [GET]
+  Session ID: cfccdb4c240a3e953765434940eaccc2
+  Parameters: {"action"=>"ls", "controller"=>"kernel", "page"=>"2"}
+  [4;35;1mCommand Columns (0.004025)[0m   [0mSHOW FIELDS FROM commands[0m
+  [4;36;1mSQL (0.000511)[0m   [0;1mSELECT count(*) AS count_all FROM commands [0m
+  [4;35;1mCommand Load (0.024899)[0m   [0mSELECT * FROM commands ORDER BY creation_date DESC LIMIT 50, 50[0m
+Rendering  within layouts/standard
+Rendering kernel/ls
+Rendered shared/_command_list (0.04680)
+Rendered shared/_header (0.00022)
+Rendered shared/_input_box (0.07937)
+Rendered shared/_footer (0.00305)
+Completed in 0.16841 (5 reqs/sec) | Rendering: 0.13112 (77%) | DB: 0.02943 (17%) | 200 OK [http://localhost/kernel/ls?page=2]
+
+
+Processing ParserController#index (for 127.0.0.1 at 2012-08-28 21:57:47) [GET]
+  Session ID: cfccdb4c240a3e953765434940eaccc2
+  Parameters: {"action"=>"index", "controller"=>"parser"}
+Rendering parser/index
+Rendered shared/_header (0.00026)
+Rendered shared/_input_box (0.00009)
+Rendered shared/_footer (0.00336)
+Completed in 0.00575 (173 reqs/sec) | Rendering: 0.00487 (84%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+
+
+Processing DocumentationController#jeremys_picks (for 127.0.0.1 at 2012-08-28 21:57:58) [GET]
+  Session ID: cfccdb4c240a3e953765434940eaccc2
+  Parameters: {"action"=>"jeremys_picks", "controller"=>"documentation"}
+Rendering  within layouts/standard
+Rendering documentation/jeremys_picks
+Rendered shared/_header (0.00025)
+Rendered shared/_input_box (0.00007)
+Rendered shared/_footer (0.00341)
+Completed in 0.02065 (48 reqs/sec) | Rendering: 0.01981 (95%) | DB: 0.00000 (0%) | 200 OK [http://localhost/documentation/jeremys_picks]

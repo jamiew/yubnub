@@ -6,10 +6,10 @@ module ParserHelper
     tokens = command_string.split
     name = tokens[0]
     args = tokens[1..-1].join(' ')
-    command = Command.find_first ['name=?', name]
+    command = Command.find(:first, :conditions =>['name=?', name])
     if command == nil or (tokens.size > 1 and not takes_parameters(command.url))
       default = default.nil? ? 'g' : default
-      command = Command.find_first("name='" + default + "'")
+      command = Command.find(:first, :conditions => "name='" + default + "'")
       args = command_string
     else
       command.uses += 1

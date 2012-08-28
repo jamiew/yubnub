@@ -30,8 +30,8 @@
   Pages:
   <span style="font-size:22px">
   <%
-    pagination_params = @params.delete_if {|key,value| key=='page'}
-    previous_params, next_params = @params.dup, @params.dup
+    pagination_params = params.delete_if {|key,value| key=='page'}
+    previous_params, next_params = params.dup, params.dup
     previous_params[:page] = @command_pages.current.previous
     next_params[:page] = @command_pages.current.next
   %>

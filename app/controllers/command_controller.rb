@@ -2,32 +2,33 @@ class CommandController < ApplicationController
   include ApplicationHelper
   include ParserHelper
   include CommandHelper
-  model :command
+  require_dependency 'command'
+  #model :command
   layout 'standard'
   def exists
-    output = Command.find_first(['name = ?', @params['name']]) ? 'true' : 'false'
+    output = Command.find_first(['name = ?', params['name']]) ? 'true' : 'false'
     json = '({exists: ' + output + '})'
     response.headers['X-JSON'] = json
     render({:content_type => :js, :text => json})
   end
   def new
     @page_title = "Create A New Command"
-    @name = empty_string_if_nil(@params['name'])
+    @name = empty_string_if_nil(params['name'])
     @command = Command.new
     flash.now[:message] = "Hmm! Looks like you're creating a new command!<br/>Good for you, buckeroo!"
   end
   def add_command
-    url = @params['command']['url']
+    url = params['command']['url']
     # Call prefix_with_url_if_necessary before prefix_with_http_if_necessary, because the latter checks
     # if the url begins with { [Jon Aquino 2005-07-17]
     url = prefix_with_url_if_necessary url
     url = prefix_with_http_if_necessary url
-    if not @params['test_button'].nil?
-      test_command url, @params['test_command']
+    if not params['test_button'].nil?
+      test_command url, params['test_command']
       return
     end
-    if not @params['view_url_button'].nil?
-      view_url url, @params['test_command']
+    if not params['view_url_button'].nil?
+      view_url url, params['test_command']
       return
     end
     if @request.method() != :post then
@@ -41,7 +42,7 @@ class CommandController < ApplicationController
       redirect_after_add_command
       return
     end
-    if @params['x'] != '' then
+    if params['x'] != '' then
       redirect_after_add_command
       return
     end
@@ -59,9 +60,9 @@ class CommandController < ApplicationController
       return
     end
     command = Command.new
-    command.name = @params['command']['name']
+    command.name = params['command']['name']
     command.url = url
-    command.description = @params['command']['description']
+    command.description = params['command']['description']
     command.creation_date = Time.now
     if command.save
       redirect_after_add_command
