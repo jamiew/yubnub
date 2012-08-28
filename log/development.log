@@ -1,184 +1,263 @@
-# Logfile created on Tue Aug 28 22:32:53 +0200 2012
+# Logfile created on Tue Aug 28 22:53:23 +0200 2012DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /Users/ktamas/.rvm/gems/ruby-1.8.7-p370/gems/actionpack-2.3.14/lib/action_controller/middleware_stack.rb:72)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
-Processing ParserController#index (for 127.0.0.1 at 2012-08-28 22:33:23) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"action"=>"index", "controller"=>"parser"}
-  [4;36;1mSQL (0.000152)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2012-08-28 22:55:34) [GET]
+
+NameError (uninitialized constant ApplicationController):
+  app/controllers/parser_controller.rb:1
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (111.6ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /Users/ktamas/.rvm/gems/ruby-1.8.7-p370/gems/actionpack-2.3.14/lib/action_controller/middleware_stack.rb:72)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ParserController#index (for 127.0.0.1 at 2012-08-28 22:56:57) [GET]
 Rendering parser/index
-Rendered shared/_header (0.00174)
-Rendered shared/_input_box (0.00094)
-Rendered shared/_footer (0.00514)
-Completed in 0.02652 (37 reqs/sec) | Rendering: 0.02446 (92%) | DB: 0.00015 (0%) | 200 OK [http://localhost/]
+Rendered shared/_header (1.2ms)
+Rendered shared/_input_box (0.8ms)
+Rendered shared/_footer (6.3ms)
+Completed in 33ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /Users/ktamas/.rvm/gems/ruby-1.8.7-p370/gems/actionpack-2.3.14/lib/action_controller/middleware_stack.rb:72)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing ParserController#parse (for 127.0.0.1 at 2012-08-28 22:33:26) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"command"=>"create", "action"=>"parse", "controller"=>"parser"}
-  [4;35;1mCommand Load (0.000468)[0m   [0mSELECT * FROM `commands` WHERE (name='create') LIMIT 1[0m
-  [4;36;1mCommand Columns (0.002578)[0m   [0;1mSHOW FIELDS FROM `commands`[0m
-  [4;35;1mSQL (0.000127)[0m   [0mBEGIN[0m
-  [4;36;1mCommand Update (0.000376)[0m   [0;1mUPDATE `commands` SET `creation_date` = '2005-06-04 18:52:07', `spam` = 0, `last_use_date` = '2012-08-28 22:33:26', `golden_egg_date` = '2005-06-04 18:52:07', `description` = 'SYNOPSIS\r\n create [command-name]\r\n\r\nEXAMPLE\r\n create\r\n\r\nDESCRIPTION\r\n Creates a new YubNub command with the given name (must not\r\n already exist). You will be prompted for a URL pointing to\r\n the implementation of the command -- it might be an existing\r\n service (e.g. the Google Image Search submit form), or your\r\n own custom implementation sitting on your own server.\r\n\r\n Welcome to the Web OS: small pieces, loosely joined.', `uses` = 159486, `url` = 'http://localhost:3000/command/new?name=%s', `name` = 'create' WHERE `id` = 4[0m
-  [4;35;1mSQL (0.000077)[0m   [0mCOMMIT[0m
+Processing ParserController#parse (for 127.0.0.1 at 2012-08-28 22:57:00) [GET]
+  Parameters: {"command"=>"create"}
+  [4;36;1mCommand Load (0.5ms)[0m   [0;1mSELECT * FROM `commands` WHERE (name='create') LIMIT 1[0m
+  [4;35;1mCommand Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `commands`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCommand Update (0.4ms)[0m   [0mUPDATE `commands` SET `last_use_date` = '2012-08-28 22:57:00', `uses` = 159489 WHERE `id` = 4[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
 Redirected to http://localhost:3000/command/new?name=
-Completed in 0.01169 (85 reqs/sec) | DB: 0.00363 (31%) | 302 Found [http://localhost/parser/parse?command=create]
+Completed in 14ms (DB: 5) | 302 Found [http://localhost/parser/parse?command=create]
+DEPRECATION WARNING: Giving :session_key to SessionStore is deprecated, please use :key instead. (called from new at /Users/ktamas/.rvm/gems/ruby-1.8.7-p370/gems/actionpack-2.3.14/lib/action_controller/middleware_stack.rb:72)
+  [4;35;1mSQL (4.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing CommandController#new (for 127.0.0.1 at 2012-08-28 22:33:26) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"name"=>"", "action"=>"new", "controller"=>"command"}
-  [4;36;1mCommand Columns (0.002681)[0m   [0;1mSHOW FIELDS FROM `commands`[0m
+Processing CommandController#new (for 127.0.0.1 at 2012-08-28 22:57:00) [GET]
+  Parameters: {"name"=>""}
+  [4;36;1mCommand Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `commands`[0m
 Rendering template within layouts/standard
 Rendering command/new
-Rendered shared/_header (0.00021)
-Rendered shared/_input_box (0.00010)
-Rendered shared/_footer (0.00319)
-Completed in 0.02958 (33 reqs/sec) | Rendering: 0.02356 (79%) | DB: 0.00268 (9%) | 200 OK [http://localhost/command/new?name=]
+Rendered shared/_header (0.4ms)
+Rendered shared/_input_box (0.1ms)
+Rendered shared/_footer (5.2ms)
+Completed in 39ms (View: 32, DB: 8) | 200 OK [http://localhost/command/new?name=]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing ParserController#parse (for 127.0.0.1 at 2012-08-28 22:33:30) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"command"=>"ls", "action"=>"parse", "controller"=>"parser"}
-  [4;35;1mCommand Load (0.000444)[0m   [0mSELECT * FROM `commands` WHERE (name='ls') LIMIT 1[0m
-  [4;36;1mCommand Columns (0.004492)[0m   [0;1mSHOW FIELDS FROM `commands`[0m
-  [4;35;1mSQL (0.000151)[0m   [0mBEGIN[0m
-  [4;36;1mCommand Update (0.000349)[0m   [0;1mUPDATE `commands` SET `creation_date` = '2005-06-04 12:42:27', `spam` = 0, `last_use_date` = '2012-08-28 22:33:30', `golden_egg_date` = '2005-06-04 12:42:27', `description` = 'SYNOPSIS\r\n ls [word or phrase]\r\n\r\nEXAMPLES\r\n ls\r\n ls music\r\n\r\nDESCRIPTION\r\n Lists information about all the commands in YubNub. Sorts entries\r\n by date.\r\n\r\n If you specify a word or phrase, YubNub will search the \r\n descriptions, names, and urls for that word or phrase.\r\n For example, \"ls music\" will return all YubNub commands pertaining \r\n to music.', `uses` = 489713, `url` = 'http://localhost:3000/kernel/ls?args=%s', `name` = 'ls' WHERE `id` = 2[0m
-  [4;35;1mSQL (0.000074)[0m   [0mCOMMIT[0m
-Redirected to http://localhost:3000/kernel/ls?args=
-Completed in 0.01177 (84 reqs/sec) | DB: 0.00551 (46%) | 302 Found [http://localhost/parser/parse?command=ls]
-
-
-Processing ApplicationController#ls (for 127.0.0.1 at 2012-08-28 22:33:30) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"args"=>"", "action"=>"ls", "controller"=>"kernel"}
-
-
-SyntaxError (/Users/ktamas/Prog/yubnub/app/controllers/kernel_controller.rb:22: syntax error, unexpected kIF, expecting ')'
-    if @command == nil then 
-      ^):
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:203:in `load_without_new_constant_marking'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:203:in `load_file'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:342:in `new_constants_in'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:202:in `load_file'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:94:in `require_or_load'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:248:in `load_missing_constant'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:453:in `const_missing'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:465:in `const_missing'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/inflector.rb:260:in `constantize'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/core_ext/string/inflections.rb:151:in `constantize'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.5/lib/action_controller/routing.rb:1426:in `recognize'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.5/lib/action_controller/dispatcher.rb:170:in `handle_request'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.5/lib/action_controller/dispatcher.rb:115:in `dispatch'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.5/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.5/lib/action_controller/dispatcher.rb:9:in `dispatch'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/mongrel-1.1.5/bin/mongrel_rails:281
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:489:in `load'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:489:in `load'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:342:in `new_constants_in'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:489:in `load'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.5/lib/commands/servers/mongrel.rb:64
-    /Users/ktamas/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-    /Users/ktamas/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:496:in `require'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:342:in `new_constants_in'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/activesupport-2.0.5/lib/active_support/dependencies.rb:496:in `require'
-    /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/rails-2.0.5/lib/commands/server.rb:39
-    /Users/ktamas/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
-    /Users/ktamas/.rvm/rubies/ruby-1.8.6-p420/lib/ruby/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
-    script/server:3
-
-Rendering /Users/ktamas/.rvm/gems/ruby-1.8.6-p420/gems/actionpack-2.0.5/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
-
-
-Processing KernelController#ls (for 127.0.0.1 at 2012-08-28 22:34:01) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"args"=>"", "action"=>"ls", "controller"=>"kernel"}
-  [4;36;1mSQL (0.000144)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
-  [4;35;1mCommand Columns (0.003526)[0m   [0mSHOW FIELDS FROM `commands`[0m
-  [4;36;1mSQL (0.000238)[0m   [0;1mSELECT count(*) AS count_all FROM `commands` [0m
-  [4;35;1mCommand Load (0.021422)[0m   [0mSELECT * FROM `commands` ORDER BY creation_date DESC LIMIT 0, 50[0m
+Processing CommandController#new (for 127.0.0.1 at 2012-08-28 22:57:57) [GET]
+  Parameters: {"name"=>""}
+  [4;35;1mCommand Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `commands`[0m
 Rendering template within layouts/standard
-Rendering kernel/ls
-Rendered shared/_command_list (0.02434)
-Rendered shared/_header (0.00159)
-Rendered shared/_input_box (0.00115)
-Rendered shared/_footer (0.00435)
-Completed in 0.08329 (12 reqs/sec) | Rendering: 0.04827 (57%) | DB: 0.02533 (30%) | 200 OK [http://localhost/kernel/ls?args=]
+Rendering command/new
+Rendered shared/_header (1.3ms)
+Rendered shared/_input_box (0.7ms)
+Rendered shared/_footer (80.8ms)
+Completed in 129ms (View: 122, DB: 4) | 200 OK [http://localhost/command/new?name=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing KernelController#ls (for 127.0.0.1 at 2012-08-28 22:34:06) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"args"=>"", "action"=>"ls", "controller"=>"kernel", "page"=>"7"}
-  [4;36;1mCommand Columns (0.004798)[0m   [0;1mSHOW FIELDS FROM `commands`[0m
-  [4;35;1mSQL (0.000270)[0m   [0mSELECT count(*) AS count_all FROM `commands` [0m
-  [4;36;1mCommand Load (0.028308)[0m   [0;1mSELECT * FROM `commands` ORDER BY creation_date DESC LIMIT 300, 50[0m
-Rendering template within layouts/standard
-Rendering kernel/ls
-Rendered shared/_command_list (0.02149)
-Rendered shared/_header (0.00020)
-Rendered shared/_input_box (0.00009)
-Rendered shared/_footer (0.00211)
-Completed in 0.07834 (12 reqs/sec) | Rendering: 0.03569 (45%) | DB: 0.03338 (42%) | 200 OK [http://localhost/kernel/ls?args=&page=7]
+Processing CommandController#exists (for 127.0.0.1 at 2012-08-28 22:58:11) [GET]
+  Parameters: {"name"=>"rails_two_point_three"}
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT * FROM `commands` WHERE (name = 'rails_two_point_three') LIMIT 1[0m
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/command/exists?name=rails_two_point_three]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing ParserController#index (for 127.0.0.1 at 2012-08-28 22:34:07) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"action"=>"index", "controller"=>"parser"}
+Processing CommandController#exists (for 127.0.0.1 at 2012-08-28 22:58:27) [GET]
+  Parameters: {"name"=>"rails_two_point_three"}
+  [4;35;1mCommand Load (0.5ms)[0m   [0mSELECT * FROM `commands` WHERE (name = 'rails_two_point_three') LIMIT 1[0m
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://localhost/command/exists?name=rails_two_point_three]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommandController#exists (for 127.0.0.1 at 2012-08-28 22:58:30) [GET]
+  Parameters: {"name"=>"rails_two_point_three"}
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT * FROM `commands` WHERE (name = 'rails_two_point_three') LIMIT 1[0m
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/command/exists?name=rails_two_point_three]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommandController#exists (for 127.0.0.1 at 2012-08-28 22:58:48) [GET]
+  Parameters: {"name"=>"rails_two_point_three"}
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT * FROM `commands` WHERE (name = 'rails_two_point_three') LIMIT 1[0m
+Completed in 3ms (View: 1, DB: 1) | 200 OK [http://localhost/command/exists?name=rails_two_point_three]
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommandController#add_command (for 127.0.0.1 at 2012-08-28 22:58:50) [POST]
+  Parameters: {"test_command"=>"rails_two_point_three", "test_button"=>"Test", "command"=>{"name"=>"rails_two_point_three", "url"=>"http://weblog.rubyonrails.org/2011/8/16/ann-rails-2-3-14/", "description"=>""}, "x"=>""}
+Redirected to http://weblog.rubyonrails.org/2011/8/16/ann-rails-2-3-14/
+Completed in 2ms (DB: 1) | 302 Found [http://localhost/command/add_command]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommandController#add_command (for 127.0.0.1 at 2012-08-28 22:58:52) [POST]
+  Parameters: {"view_url_button"=>"View URL", "test_command"=>"rails_two_point_three", "command"=>{"name"=>"rails_two_point_three", "url"=>"http://weblog.rubyonrails.org/2011/8/16/ann-rails-2-3-14/", "description"=>""}, "x"=>""}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/command/add_command]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommandController#exists (for 127.0.0.1 at 2012-08-28 22:58:58) [GET]
+  Parameters: {"name"=>"rails_two_point_three"}
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT * FROM `commands` WHERE (name = 'rails_two_point_three') LIMIT 1[0m
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/command/exists?name=rails_two_point_three]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing CommandController#add_command (for 127.0.0.1 at 2012-08-28 22:59:00) [POST]
+  Parameters: {"submit_button"=>"Create my command!", "test_command"=>"rails_two_point_three", "command"=>{"name"=>"rails_two_point_three", "url"=>"http://weblog.rubyonrails.org/2011/8/16/ann-rails-2-3-14/", "description"=>"teeeest"}, "x"=>""}
+  [4;35;1mBannedUrlPattern Load (0.5ms)[0m   [0mSELECT * FROM `banned_url_patterns` WHERE ('http://weblog.rubyonrails.org/2011/8/16/ann-rails-2-3-14/' LIKE pattern) LIMIT 1[0m
+  [4;36;1mCommand Load (17.6ms)[0m   [0;1mSELECT * FROM `commands` WHERE (url = 'http://weblog.rubyonrails.org/2011/8/16/ann-rails-2-3-14/') [0m
+  [4;35;1mCommand Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `commands`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mCommand Create (1.7ms)[0m   [0mINSERT INTO `commands` (`name`, `golden_egg_date`, `url`, `description`, `spam`, `uses`, `creation_date`, `last_use_date`) VALUES('rails_two_point_three', NULL, 'http://weblog.rubyonrails.org/2011/8/16/ann-rails-2-3-14/', 'teeeest', 0, 0, '2012-08-28 22:59:00', NULL)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed in 37ms (DB: 25) | 302 Found [http://localhost/command/add_command]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ParserController#index (for 127.0.0.1 at 2012-08-28 22:59:00) [GET]
 Rendering parser/index
-Rendered shared/_header (0.00027)
-Rendered shared/_input_box (0.00010)
-Rendered shared/_footer (0.00216)
-Completed in 0.01880 (53 reqs/sec) | Rendering: 0.01677 (89%) | DB: 0.00000 (0%) | 200 OK [http://localhost/]
+Rendered shared/_header (0.3ms)
+Rendered shared/_input_box (0.1ms)
+Rendered shared/_footer (3.9ms)
+Completed in 27ms (View: 25, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing ParserController#parse (for 127.0.0.1 at 2012-08-28 22:34:11) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"command"=>"ge", "action"=>"parse", "controller"=>"parser"}
-  [4;35;1mCommand Load (0.001591)[0m   [0mSELECT * FROM `commands` WHERE (name='ge') LIMIT 1[0m
-  [4;36;1mCommand Columns (0.002722)[0m   [0;1mSHOW FIELDS FROM `commands`[0m
-  [4;35;1mSQL (0.000129)[0m   [0mBEGIN[0m
-  [4;36;1mCommand Update (0.000361)[0m   [0;1mUPDATE `commands` SET `creation_date` = '2005-06-16 05:47:48', `spam` = 0, `last_use_date` = '2012-08-28 22:34:11', `golden_egg_date` = '2005-06-16 05:47:48', `description` = 'SYNOPSIS\r\n ge [word or phrase]\r\n\r\nEXAMPLES\r\n ge\r\n ge dictionary\r\n\r\nDESCRIPTION\r\n Displays the YubNub Golden Eggs - a list of YubNub commands\r\n that people seem to find particularly useful and interesting.\r\n\r\n If you specify a word or phrase, YubNub will search the \r\n descriptions, names, and urls for that word or phrase.\r\n For example, \"ge dictionary\" will return all Golden-Egg commands \r\n pertaining to dictionaries.', `uses` = 176883, `url` = 'http://yubnub.org/kernel/golden_eggs?args=%s', `name` = 'ge' WHERE `id` = 5747[0m
-  [4;35;1mSQL (0.000083)[0m   [0mCOMMIT[0m
-Redirected to http://yubnub.org/kernel/golden_eggs?args=
-Completed in 0.01185 (84 reqs/sec) | DB: 0.00489 (41%) | 302 Found [http://localhost/parser/parse?command=ge]
+Processing ParserController#parse (for 127.0.0.1 at 2012-08-28 22:59:03) [GET]
+  Parameters: {"command"=>"rails_two_point_three"}
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT * FROM `commands` WHERE (name='rails_two_point_three') LIMIT 1[0m
+  [4;36;1mCommand Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `commands`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mCommand Update (0.4ms)[0m   [0;1mUPDATE `commands` SET `last_use_date` = '2012-08-28 22:59:03', `uses` = 1 WHERE `id` = 39723[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://weblog.rubyonrails.org/2011/8/16/ann-rails-2-3-14/
+Completed in 13ms (DB: 6) | 302 Found [http://localhost/parser/parse?command=rails_two_point_three]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing ParserController#parse (for 127.0.0.1 at 2012-08-28 22:34:39) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"command"=>"gim porsche 911", "action"=>"parse", "controller"=>"parser"}
-  [4;36;1mCommand Load (0.000396)[0m   [0;1mSELECT * FROM `commands` WHERE (name='gim') LIMIT 1[0m
-  [4;35;1mCommand Columns (0.003263)[0m   [0mSHOW FIELDS FROM `commands`[0m
-  [4;36;1mSQL (0.000105)[0m   [0;1mBEGIN[0m
-  [4;35;1mCommand Update (0.000313)[0m   [0mUPDATE `commands` SET `creation_date` = '2005-06-04 20:39:14', `spam` = 1, `last_use_date` = '2012-08-28 22:34:39', `golden_egg_date` = '2005-06-04 20:39:14', `description` = 'SYNOPSIS\r\n gim [keywords]\r\n\r\nEXAMPLE\r\n gim \"porsche 911\"\r\n\r\nDESCRIPTION\r\n Performs a Google Image search using the given keywords.', `uses` = 802261, `url` = 'http://images.google.com/images?q=%s', `name` = 'gim' WHERE `id` = 7[0m
-  [4;36;1mSQL (0.000074)[0m   [0;1mCOMMIT[0m
-Redirected to http://images.google.com/images?q=porsche+911
-Completed in 0.01128 (88 reqs/sec) | DB: 0.00415 (36%) | 302 Found [http://localhost/parser/parse?command=gim+porsche+911]
+Processing ParserController#parse (for 127.0.0.1 at 2012-08-28 22:59:07) [GET]
+  Parameters: {"command"=>"ls"}
+  [4;35;1mCommand Load (0.4ms)[0m   [0mSELECT * FROM `commands` WHERE (name='ls') LIMIT 1[0m
+  [4;36;1mCommand Columns (4.4ms)[0m   [0;1mSHOW FIELDS FROM `commands`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mCommand Update (0.3ms)[0m   [0;1mUPDATE `commands` SET `last_use_date` = '2012-08-28 22:59:07', `uses` = 489716 WHERE `id` = 2[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/kernel/ls?args=
+Completed in 12ms (DB: 5) | 302 Found [http://localhost/parser/parse?command=ls]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
 
 
-Processing ParserController#parse (for 127.0.0.1 at 2012-08-28 22:34:43) [GET]
-  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--82baf3e92b7c8d80a4fe8f3df4911e53805fc02a
-  Parameters: {"command"=>"random 100", "action"=>"parse", "controller"=>"parser"}
-  [4;35;1mCommand Load (0.000412)[0m   [0mSELECT * FROM `commands` WHERE (name='random') LIMIT 1[0m
-  [4;36;1mCommand Columns (0.002812)[0m   [0;1mSHOW FIELDS FROM `commands`[0m
-  [4;35;1mSQL (0.000125)[0m   [0mBEGIN[0m
-  [4;36;1mCommand Update (0.000322)[0m   [0;1mUPDATE `commands` SET `creation_date` = '2005-06-04 19:57:44', `spam` = 0, `last_use_date` = '2012-08-28 22:34:43', `golden_egg_date` = '2005-06-04 19:57:44', `description` = 'NAME\r\n rand - display a specified number\r\n of random numbers in a specified\r\n range, courtesy of random.org\r\n\r\nSYNOPSIS\r\n rand\r\n -min <min value = 1>\r\n -max <max value = 100>\r\n -num <how many to generate = 1>\r\n\r\nEXAMPLE\r\n rand 49\r\n rand -min 1998 -max 2005\r\n rand -num 5 -max 20 \r\n\r\nAUTHOR\r\n Richard Frankel', `uses` = 117502, `url` = 'http://random.org/cgi-bin/randnum?num=${num=1}&min=${min=1}&max=%s${max}&col=1', `name` = 'random' WHERE `id` = 5[0m
-  [4;35;1mSQL (0.000070)[0m   [0mCOMMIT[0m
-Redirected to http://random.org/cgi-bin/randnum?num=1&min=1&max=100&col=1
-Completed in 0.01019 (98 reqs/sec) | DB: 0.00374 (36%) | 302 Found [http://localhost/parser/parse?command=random+100]
+Processing KernelController#ls (for 127.0.0.1 at 2012-08-28 22:59:07) [GET]
+  Parameters: {"args"=>""}
+
+NameError (uninitialized constant ActionController::Pagination::Inflector):
+  app/controllers/kernel_controller.rb:12:in `initialize_pagination'
+  app/controllers/kernel_controller.rb:9:in `ls'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/ktamas/.rvm/rubies/ruby-1.8.7-p370/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (50.5ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing KernelController#ls (for 127.0.0.1 at 2012-08-28 23:00:27) [GET]
+  Parameters: {"args"=>""}
+  [4;35;1mCommand Columns (3.6ms)[0m   [0mSHOW FIELDS FROM `commands`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `commands` [0m
+  [4;35;1mCommand Load (21.5ms)[0m   [0mSELECT * FROM `commands` ORDER BY creation_date DESC LIMIT 0, 50[0m
+Rendering template within layouts/standard
+Rendering kernel/ls
+Rendered shared/_command_list (103.2ms)
+Rendered shared/_header (1.3ms)
+Rendered shared/_input_box (0.7ms)
+Rendered shared/_footer (5.6ms)
+Completed in 173ms (View: 141, DB: 25) | 200 OK [http://localhost/kernel/ls?args=]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing KernelController#ls (for 127.0.0.1 at 2012-08-28 23:00:31) [GET]
+  Parameters: {"page"=>"8", "args"=>""}
+  [4;35;1mCommand Columns (4.4ms)[0m   [0mSHOW FIELDS FROM `commands`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `commands` [0m
+  [4;35;1mCommand Load (24.6ms)[0m   [0mSELECT * FROM `commands` ORDER BY creation_date DESC LIMIT 350, 50[0m
+Rendering template within layouts/standard
+Rendering kernel/ls
+Rendered shared/_command_list (36.9ms)
+Rendered shared/_header (1.1ms)
+Rendered shared/_input_box (0.1ms)
+Rendered shared/_footer (3.9ms)
+Completed in 83ms (View: 46, DB: 29) | 200 OK [http://localhost/kernel/ls?args=&page=8]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing KernelController#ls (for 127.0.0.1 at 2012-08-28 23:00:37) [GET]
+  Parameters: {"page"=>"5", "args"=>""}
+  [4;35;1mCommand Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `commands`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `commands` [0m
+  [4;35;1mCommand Load (26.0ms)[0m   [0mSELECT * FROM `commands` ORDER BY creation_date DESC LIMIT 200, 50[0m
+Rendering template within layouts/standard
+Rendering kernel/ls
+Rendered shared/_command_list (33.7ms)
+Rendered shared/_header (0.3ms)
+Rendered shared/_input_box (0.1ms)
+Rendered shared/_footer (4.2ms)
+Completed in 78ms (View: 42, DB: 29) | 200 OK [http://localhost/kernel/ls?args=&page=5]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing KernelController#ls (for 127.0.0.1 at 2012-08-28 23:00:41) [GET]
+  Parameters: {"page"=>"12", "args"=>""}
+  [4;35;1mCommand Columns (161.4ms)[0m   [0mSHOW FIELDS FROM `commands`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM `commands` [0m
+  [4;35;1mCommand Load (24.9ms)[0m   [0mSELECT * FROM `commands` ORDER BY creation_date DESC LIMIT 550, 50[0m
+Rendering template within layouts/standard
+Rendering kernel/ls
+Rendered shared/_command_list (35.8ms)
+Rendered shared/_header (0.3ms)
+Rendered shared/_input_box (0.1ms)
+Rendered shared/_footer (3.9ms)
+Completed in 237ms (View: 43, DB: 187) | 200 OK [http://localhost/kernel/ls?args=&page=12]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ParserController#index (for 127.0.0.1 at 2012-08-28 23:00:43) [GET]
+Rendering parser/index
+Rendered shared/_header (0.4ms)
+Rendered shared/_input_box (0.1ms)
+Rendered shared/_footer (4.0ms)
+Completed in 15ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (70.8ms)[0m   [0;1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `schema_migrations`[0m
+  [4;36;1mSQL (200.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
