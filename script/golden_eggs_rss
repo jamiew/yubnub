@@ -33,7 +33,7 @@ rss = "<?xml version='1.0'?>
 <rss version='0.91'>
   <channel>
     <title>YubNub Golden Eggs</title>
-    <link>http://yubnub.org/kernel/golden_eggs</link>
+    <link>http://yubnub.ktamas.com/kernel/golden_eggs</link>
     <description>Welcome to YubNub Golden Eggs! The Golden Eggs are YubNub commands that people seem to find particularly useful and interesting. If you want to nominate a YubNub command for this list, email Jon about it.</description>
     <pubDate>#{commands[0].golden_egg_date.rfc2822}</pubDate>
     <lastBuildDate>#{commands[0].golden_egg_date.rfc2822}</lastBuildDate>"
@@ -43,7 +43,7 @@ commands.each do |command|
   rss += "
     <item>
        <title>#{xml_escape(command.name)}</title>
-       <link>http://yubnub.org/kernel/man?args=#{xml_escape(command.name)}</link>
+       <link>http://yubnub.ktamas.com/kernel/man?args=#{xml_escape(command.name)}</link>
        <description>#{xml_escape(command.description)} #{xml_escape(command.url)}</description>
        <pubDate>#{command.creation_date.rfc2822}</pubDate>
     </item>

@@ -1,6 +1,6 @@
                                                                                                                                                                                                                                                                
 #!/bin/sh
-# elvis: yubnub: yubnub is the url-line for everyone. yubnub.org
+# elvis: yubnub: yubnub is the url-line for everyone. yubnub.ktamas.com
 # initial implementation by Iain D Broadfoot, ripped from the freshmeat elvi
 . surfraw || exit 1
 
@@ -17,9 +17,9 @@ w3_config
 w3_parse_args "$@"
 # w3_args now contains a list of arguments
 if test -z "$w3_args"; then
-    w3_browse_url "http://www.yubnub.org/"
+    w3_browse_url "http://yubnub.ktamas.com/"
 else
     escaped_args=`w3_url_of_arg $w3_args`
-    w3_browse_url "http://yubnub.org/parser/parse?command=${escaped_args}"
+    w3_browse_url "http://yubnub.ktamas.com/parser/parse?command=${escaped_args}"
 fi
 

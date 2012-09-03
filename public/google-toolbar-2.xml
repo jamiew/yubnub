@@ -1,7 +1,7 @@
 <custombuttons xmlns="http://toolbar.google.com/custombuttons/">
   <button>
-    <search>http://yubnub.org/parser/parse?command={query}</search>
-    <site>http://yubnub.org/</site>
+    <search>http://yubnub.ktamas.com/parser/parse?command={query}</search>
+    <site>http://yubnub.ktamas.com/</site>
     <title>YubNub</title>
     <description>YubNub - A (Social) Command Line for the Web</description>
     <icon mode="base64">

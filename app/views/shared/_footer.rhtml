@@ -2,14 +2,14 @@
 <div class="footer">
   <a href="http://jonaquino.blogspot.com/2005/06/yubnub-my-entry-for-rails-day-24-hour.html">What Is This Thing?</a> |
   <%= link_to_unless_current('List All Commands (ls)', :controller => 'parser', :action => 'parse', :command => 'ls') %>
-  <a href="http://yubnub.org/commands.xml"><img src="/images/xml_button.gif" alt="Subscribe to RSS feed"></a> |
+  <a href="http://yubnub.ktamas.com/commands.xml"><img src="/images/xml_button.gif" alt="Subscribe to RSS feed"></a> |
   <%= link_to_unless_current('Create a New Command', :controller => 'parser', :action => 'parse', :command => 'create') %> |
   <%= link_to_unless_current('Installing YubNub', :controller => 'documentation', :action => 'describe_installation') %> |
   <%= link_to_unless_current('Advanced Syntax', :controller => 'documentation', :action => 'describe_advanced_syntax') %>
   <br />
   <%= link_to_unless_current('Most-Used Commands', :controller => 'kernel', :action => 'most_used_commands') %> |
   <%= link_to_unless_current('Golden Eggs (Notable Commands)', :controller => 'parser', :action => 'parse', :command => 'ge') %>
-  <a href="http://yubnub.org/golden_eggs.xml"><img src="/images/xml_button.gif" alt="Subscribe to RSS feed"/></a>  |
+  <a href="http://yubnub.ktamas.com/golden_eggs.xml"><img src="/images/xml_button.gif" alt="Subscribe to RSS feed"/></a>  |
   <%= link_to_unless_current("Jeremy's Picks", :controller => 'documentation', :action => 'jeremys_picks') %>
   <br />
   <a href="http://groups.google.com/group/YubNub">Community (Google Group)</a> |

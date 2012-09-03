@@ -39,7 +39,7 @@ To get started  `M-x yubnub <RET> ls <RET>' will return a list of
 all yubnub commands."
   (interactive "sCommand:")
   (browse-url 
-   (concat "http://yubnub.org/parser/parse?command=" command)))
+   (concat "http://yubnub.ktamas.com/parser/parse?command=" command)))
 
 Cheers,
 
@@ -83,7 +83,7 @@ wiki hyper-links for yubnub commands:
   ;;  [[yubnub://rfc 2252][See RFC2252]] 
   ;;
   ;; To look up a domain name in the whois database:
-  ;;  [[yubnub://whois yubnub.org][whois database entry for yubnub.org]]
+  ;;  [[yubnub://whois yubnub.ktamas.com][whois database entry for yubnub.ktamas.com]]
   ;;
   ;; To search for something in Google
   ;;  [[yubnub://gg Charles Dickens][Google for Charles Dickens]]
@@ -137,7 +137,7 @@ Content-Description: planner-yubnub.el
 ;; Example:
 ;;
 ;; There are hundreds of yubnub commands, see
-;; http://yubnub.org/parser/parse?command=ls to see a list of existing
+;; http://yubnub.ktamas.com/parser/parse?command=ls to see a list of existing
 ;; commands.  You can create your own commands if you don't see what you
 ;; need.
 ;; 
@@ -146,7 +146,7 @@ Content-Description: planner-yubnub.el
 ;;  [[yubnub://rfc 2252][See RFC2252]] 
 ;;
 ;; To look up a domain name in the whois database:
-;;  [[yubnub://whois yubnub.org][whois database entry for yubnub.org]]
+;;  [[yubnub://whois yubnub.ktamas.com][whois database entry for yubnub.ktamas.com]]
 ;;
 ;; To search for something in Google
 ;;  [[yubnub://gg Charles Dickens][search Google for Charles Dickens]]
@@ -167,7 +167,7 @@ Content-Description: planner-yubnub.el
   "If this is a yubnub URL-command, jump to it."
   ;; Remove the yubnub://
   (setq yn-command (replace-regexp-in-string "yubnub://\\(.*\\)" "\\1" url))
-  (browse-url (concat "http://yubnub.org/parser/parse?command=" yn-command)))
+  (browse-url (concat "http://yubnub.ktamas.com/parser/parse?command=" yn-command)))
 
 (provide 'planner-yubnub)
 

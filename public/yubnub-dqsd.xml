@@ -2,14 +2,14 @@
   <name>YubNub.com</name>
   <category>Search The Web</category>
   <contributor>Ryan Carpenter</contributor>
-  <link>http://www.YubNub.org/</link>
+  <link>http://yubnub.ktamas.com/</link>
   <description>
     YubNub calls itself a (social) command line for the web.  It is essentially a web-based version of DQSD in which searches are added and edited by all users at once.<br/>
-    Making YubNub your default DQSD search (by adding "defaultsearch='yn';" to <a href="view-source:file:///C:/Program%20Files/Quick%20Search%20Deskbar/localprefs.js">localprefs.js</a>) will still direct your searches to Google, but give you access to the expanded set of searches on YubNub.org.<br/>
+    Making YubNub your default DQSD search (by adding "defaultsearch='yn';" to <a href="view-source:file:///C:/Program%20Files/Quick%20Search%20Deskbar/localprefs.js">localprefs.js</a>) will still direct your searches to Google, but give you access to the expanded set of searches on yubnub.ktamas.com.<br/>
     <div class="helpboxDescLabels">Switches:</div>
     <table class="helpboxDescTable">
-      <tr><td>ls</td><td> - </td><td>(list) Show all of the searches availible on YubNub.org</td></tr>
-      <tr><td>ge</td><td> - </td><td>(golden eggs) Show the most useful searches on YubNub.org</td></tr>
+      <tr><td>ls</td><td> - </td><td>(list) Show all of the searches availible on yubnub.ktamas.com</td></tr>
+      <tr><td>ge</td><td> - </td><td>(golden eggs) Show the most useful searches on yubnub.ktamas.com</td></tr>
       <tr><td>man</td><td> - </td><td>Display help for a YubNub command</td></tr>
       <tr><td>less</td><td> - </td><td>Like the less command for GNU/Linux and other *nix variants. Shows the straight source code for any file on the Internet.</td></tr>
       <tr><td>vil</td><td> - </td><td>Search McAfee's Virus Info Library for a virus, worm or hoax.</td></tr>
@@ -31,7 +31,7 @@
   </description>
   <form name="ynf"
         method="post"
-        action="http://yubnub.org/parser/parse">
+        action="http://yubnub.ktamas.com/parser/parse">
     <input type="hidden" name="command" value="" />
   </form>
   <script><![CDATA[
