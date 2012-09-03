@@ -1,5 +1,5 @@
 <br />
-<% @commands.each do |@command| %>
+<% @commands.each do |command| %>
   <span style="font-size:16px;font-weight:bold"><%=h command.name %></span>
   <% if @show_golden_egg_labels and not command.golden_egg_date.nil? then %>
     <span style="color:red">(<a class="hint" style="color:red" href="/parser/parse?command=ge">Golden Egg</a>)</span>
