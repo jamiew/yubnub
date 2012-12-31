@@ -1,0 +1,18 @@
+#!/bin/sh
+# any extra arguments are passed to `git push`, e.g. -f
+
+app='yubnub-jamiew'
+remote='heroku'
+
+# Run test suite, abort if it fails
+# FIXME test suite not working, so skip this
+# bundle exec rake || exit $?
+
+# Push *master branch only* to Heroku
+git push $remote master $1 || exit $?
+
+# Always Be Migrating
+# Disabled for now also
+# heroku run bundle exec rake db:migrate --app=$app
+
+exit 0
