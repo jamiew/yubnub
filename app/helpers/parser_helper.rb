@@ -7,6 +7,7 @@ module ParserHelper
     name = tokens[0]
     args = tokens[1..-1].join(' ')
     command = Command.find(:first, :conditions =>['name=?', name])
+    raise ActiveRecord::RecordNotFound if command.blank?
     if command == nil or (tokens.size > 1 and not takes_parameters(command.url))
       default = default.nil? ? 'g' : default
       command = Command.find(:first, :conditions => "name='" + default + "'")
