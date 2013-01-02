@@ -1,20 +1,20 @@
 development:
-  adapter: mysql
-  database: yubnub_development
+  adapter: postgresql
+  database: yubnub_dev
   host: localhost
   username: root
   password:
 
 test:
-  adapter: mysql
+  adapter: postgresql
   database: yubnub_test
   host: localhost
   username: root
   password:
 
 production:
-  adapter: mysql
-  database: yubnub
+  adapter: postgresql
+  database: yubnub_prod
   host: localhost
   username: jon_aquino
   password:
