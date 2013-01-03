@@ -1,4 +1,4 @@
-**This fork:** YubNub upgraded to Rails 2.3. Tests are not running yet but the site should be.
+**This fork:** @ktamas got YubNub upgraded to Rails 2.3, tests are not running yet but the site should be. @jamiew got YubNub running on Heroku and PostgreSQL. To load a database archive, use `rake db:yubnub`
 
 This is the source code for YubNub, a (social) command-line for the web.
 
